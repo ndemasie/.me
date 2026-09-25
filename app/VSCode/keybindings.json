@@ -1,9 +1,18 @@
 // Place your key bindings in this file to override the defaults
 [
   {
+    "key": "ctrl+shift+alt+cmd+f",
+    "command": "workbench.action.findInFiles",
+    "args": {
+      "filesToInclude": "${workspaceFolder}/",
+      "triggerSearch": false
+    },
+    "when": "editorTextFocus"
+  },
+  {
     "key": "ctrl+n",
     "command": "explorer.newFile",
-    "when": "!editorFocus"
+    "when": "!editorFocus && !inQuickOpen"
   },
   {
     "key": "ctrl+shift+n",
@@ -11,15 +20,15 @@
     "when": "!editorFocus"
   },
   {
-    "key": "shift+alt+=",
+    "key": "ctrl+shift+alt+cmd+=",
     "command": "workbench.action.increaseViewSize"
   },
   {
-    "key": "shift+alt+-",
+    "key": "ctrl+shift+alt+cmd+-",
     "command": "workbench.action.decreaseViewSize"
   },
   {
-    "key": "ctrl+cmd+s",
+    "key": "ctrl+shift+alt+cmd+s",
     "command": "cSpell.suggestSpellingCorrections"
   },
   {
@@ -28,7 +37,7 @@
     "when": "terminalFocus && terminalHasBeenCreated"
   },
   {
-    "key": "ctrl+cmd+\\",
+    "key": "alt+cmd+\\",
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
@@ -40,7 +49,7 @@
     "command": "git.stage"
   },
   {
-    "key": "f10",
+    "key": "ctrl+shift+alt+cmd+down",
     "command": "cursorMove",
     "args": {
       "to": "down",
@@ -51,7 +60,7 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "f11",
+    "key": "ctrl+shift+alt+cmd+up",
     "command": "cursorMove",
     "args": {
       "to": "up",
@@ -62,33 +71,27 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+shift+b",
-    "command": "editor.action.insertSnippet",
-    "when": "editorHasSelection && editorTextFocus && !editorReadonly",
+    "key": "shift+enter",
+    "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "snippet": "// #region $0\n$TM_SELECTED_TEXT\n// #endregion"
-    }
-  },
-  // {
-  //   "key": "alt+cmd+\\",
-  //   "command": "workbench.action.movePanelToSecondarySideBar"
-  // },
-  // {
-  //   "key": "alt+cmd+]",
-  //   "command": "workbench.action.moveSecondarySideBarToPanel",
-  //   "when": "!editorTextFocus && !foldingEnabled"
-  // },
-  {
-    "key": "cmd+k e",
-    "command": "workbench.files.action.focusOpenEditorsView",
-    "when": "workbench.explorer.outline.open"
+      "text": "\u001b\r"
+    },
+    "when": "terminalFocus"
   },
   {
-    "key": "shift+cmd+e",
-    "command": "workbench.files.action.focusFilesExplorer"
+    "key": "ctrl+shift+alt+cmd+c",
+    "command": "claudeVSCodeSidebarSecondary.focus"
   },
   {
-    "key": "shift+cmd+u",
-    "command": "cursorRedo"
+    "key": "ctrl+shift+alt+cmd+x",
+    "command": "chatgpt.sidebarSecondaryView.focus"
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+right",
+    "command": "workbench.action.nextAuxiliaryBarView"
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+left",
+    "command": "workbench.action.previousAuxiliaryBarView"
   }
 ]
