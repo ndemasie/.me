@@ -2,14 +2,14 @@
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 ## Source fns
-source "$HOME/#me/templates/fn_confirm.sh"
+source "$HOME/.me/templates/fn_confirm.sh"
 
-source "$HOME/#me/fn-close-port-process.sh"
-source "$HOME/#me/fn-docker.sh"
-source "$HOME/#me/fn-git.sh"
+source "$HOME/.me/fn-close-port-process.sh"
+source "$HOME/.me/fn-docker.sh"
+source "$HOME/.me/fn-git.sh"
 
 ## Load all secrets
-for secret in $HOME/#me/secrets/.secrets*(.); do
+for secret in $HOME/.me/secrets/.secrets*(.); do
   source "$secret"
 done
 
