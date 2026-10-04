@@ -12,15 +12,8 @@ source "$HOME/.me/fn-close-port-process.sh"
 source "$HOME/.me/fn-docker.sh"
 source "$HOME/.me/fn-git.sh"
 
-alias gf='
-bash "${HOME}/.me/script-gitmoji-commit.sh" \
-  --ticket-number-length 2 \
-  --menu-setting "--search" \
-  --menu-setting "--page=7"
-'
-
 # Load all secrets
-for secret in $HOME/.me/secrets/.secrets*(.); do
+for secret in $HOME/.me/secrets/.secrets*(N.); do
   source "$secret"
 done
 
@@ -31,3 +24,26 @@ PATH="$PATH:$HOME/.docker/bin"
 # PATH="$(brew --prefix python)/bin:$PATH" # Python3
 
 export PATH
+
+# custom
+alias gf='
+bash "${HOME}/.me/script-gitmoji-commit.sh" \
+  --ticket-number-length 6 \
+  --menu-setting "--search" \
+  --menu-setting "--page=7" \
+  --option "✨ FEAT" \
+  --option "🐛 FIX" \
+  --option "📄 DOCS" \
+  --option "🎨 STYLE" \
+  --option "♻️  REFACTOR" \
+  --option "⚡️ PERF" \
+  --option "🧪 TEST" \
+  --option "🏗️  BUILD" \
+  --option "👷 CI" \
+  --option "🔧 CHORE" \
+  --option "🔙 REVERT" \
+  && \
+bash "${HOME}/.me/script-open-azure-pr.sh"'
+
+alias l10n="bash $HOME/scripts/fn-locize.sh"
+alias run="npm run"
